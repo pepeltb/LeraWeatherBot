@@ -63,7 +63,7 @@ async def get_weather(message: types.Message):
             humidity_check = humidity
             speed_check = speed
 
-            time.sleep(5)
+            time.sleep(86400)
 
 
 
