@@ -46,11 +46,11 @@ async def get_weather(message: types.Message):
 
             message = (f'*** Сегодня {datetime.now().strftime("%d.%m.%Y")} ***\n'
                     f'В Екатеринбурге: {cur_weather}°, {wd}\n'
-                    f'Влажность в штанах: {humidity}%\n'
-                    f'Скорость вiтра тобi у сраку: {round((speed * 3.6), 1)} км/ч')
+                    f'Влажность {humidity}%\n'
+                    f'Скорость вiтра: {round((speed * 3.6), 1)} км/ч')
 
             if cur_weather == cur_weather_check and humidity == humidity_check and speed == speed_check:
-                await bot.send_message(CHANNEL_NAME, 'Токен протух, а ты - петух')
+                await bot.send_message(CHANNEL_NAME, 'Токен протух')
                 emergency_brake = False
                 break
 
@@ -69,7 +69,7 @@ async def get_weather(message: types.Message):
 
     except Exception as ex:
         #print('Ошибка', ex)
-        await bot.send_message(CHANNEL_NAME, 'Вы абсолютно дэбильны\nПроверь свой код, айтишник мамкин')
+        await bot.send_message(CHANNEL_NAME, 'Проверь свой код, айтишник ***')
 
 
 
